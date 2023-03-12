@@ -1,4 +1,4 @@
-package HomeWork5;
+
 
 import java.util.Scanner;
 
@@ -34,7 +34,7 @@ public class InputValidation {
                     System.out.println("К сожелению компьютер 'СГОРЕЛ' окончательно...");
                     isCorrect = true;
                 } else {
-                    System.out.println("Bay bay...");
+                    System.out.println("Bye bye...");
                     isCorrect = true;
                 }
             } else {

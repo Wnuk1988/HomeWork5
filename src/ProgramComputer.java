@@ -1,4 +1,3 @@
-package HomeWork5;
 
 public class ProgramComputer {
     public static void main(String[] args) {
