@@ -6,7 +6,6 @@ public class ProgramComputer {
         computer.processor = "Intel"; // марка производителя
         computer.ram = 8; // в гигабайтах
         computer.hardDisk = 500; // гигов
-        computer.workResource = 3; // количество допустимых полных циклов работы
 
         computer.description();
         while (computer.isWorking) {

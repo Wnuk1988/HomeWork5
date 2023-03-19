@@ -6,14 +6,14 @@ public class Computer extends InputValidation {
     protected String processor;
     protected int ram;
     protected int hardDisk;
-    protected int workResource;
-    protected static int resource;
+    protected static final int WORK_RESOURCE = 3;
+    protected int usedResource;
     private Random random = new Random();
     protected boolean isWorking = true;
 
     public void description() {
         System.out.printf("Processor: %s\t ram: %d\t hardDisk: %d\t workResource: %d\n"
-                , processor, ram, hardDisk, workResource);
+                , processor, ram, hardDisk, WORK_RESOURCE);
     }
 
     public void inclusion() {
@@ -21,7 +21,7 @@ public class Computer extends InputValidation {
             welcome();
             if (userGo == random.nextInt(2)) {
                 System.out.println("Вы угадали число, компьютер включается!");
-                resource++;
+                usedResource++;
             } else {
                 System.out.println("Вы не угадали число, комьютер 'СГОРЕЛ'.");
                 isWorking = false;
@@ -34,7 +34,7 @@ public class Computer extends InputValidation {
             welcome();
             if (userGo == random.nextInt(2)) {
                 System.out.println("Вы угадали число, компьютер выключается!");
-                resource++;
+                usedResource++;
             } else {
                 System.out.println("Вы не угадали число, комьютер 'СГОРЕЛ'!");
                 isWorking = false;
@@ -43,8 +43,8 @@ public class Computer extends InputValidation {
     }
 
     public boolean isWorkingLimitExists() {
-        if (resource < workResource) {
-            System.out.printf("Ресурс работы компютера равен: %d\n", resource);
+        if (usedResource < WORK_RESOURCE) {
+            System.out.printf("Ресурс работы компютера равен: %d\n", usedResource);
             return true;
         } else {
             System.out.println("Вы привысили лимит ресурса компютера и он 'СГОРЕЛ'!");
